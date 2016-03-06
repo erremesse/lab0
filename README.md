@@ -1,9 +1,7 @@
 # lab0
 
 ## URI Heroku:
-
-(localhost:8080)
-
+https://fierce-meadow-22677.herokuapp.com/
 
 ## Comentarios:
 Modificaciones del proyecto original:
@@ -15,6 +13,8 @@ Modificaciones del proyecto original:
 	+ Eliminar dependencias de Thymeleaf (es lo que reemplaza Mustache)
 	+ Añadir dependencias de Mustache (mustache.js + template + modificar)
 	+ Mover a /public (ya no se devuelve el recurso html completo, no será necesario "search.html")
-	+ Cuidado! jQuery y Bootstrap hand e ser cargados via *https*.
+	+ Cuidado! jQuery y Bootstrap hand e ser cargados via *https*
 * functions.js ->
 	+ Cargar template y volcar datos
+	
+(LogoUZ no se muestra adecuadamente)
