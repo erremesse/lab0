@@ -18,3 +18,4 @@ Modificaciones del proyecto original:
 	+ Cargar template y volcar datos
 	
 (LogoUZ no se muestra adecuadamente)
+(Template no carga correctamente en FIREFOX)
