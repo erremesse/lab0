@@ -17,10 +17,10 @@ public class SearchController {
     @Autowired
     TwitterLookupService twitter;
 
-    @RequestMapping("/")
-    public String greeting() {
-        return "index";
-    }
+//    @RequestMapping("/")
+//    public String greeting() {
+//        return "index";
+//    }
 
     @RequestMapping("/search")
     public SearchResults search(@RequestParam("q") String q){
