@@ -1,20 +1,16 @@
-# lab0
-
-## URI Heroku:
-https://fierce-meadow-22677.herokuapp.com/
+# lab1
 
 ## Comentarios:
 Modificaciones del proyecto original:
-* SearchController -> 
-	+ Transformar a RestController 
-	+ Eliminar mapeo a "/"
-	+ Modificar método "search()" para que devuelva directamente los resultados de la query al API de Twitter (en JSON)
-* index.html ->  
-	+ Eliminar dependencias de Thymeleaf (es lo que reemplaza Mustache)
-	+ Añadir dependencias de Mustache (mustache.js + template + modificar)
-	+ Mover a /public (ya no se devuelve el recurso html completo, no será necesario "search.html")
-	+ Cuidado! jQuery y Bootstrap hand e ser cargados via *https*
-* functions.js ->
-	+ Cargar template y volcar datos
+I. TwitterLookupService: para cada nueva búsqueda se crea un stream que es procesado por un callback cada vez que llega un nuevo registro.
+	SimpleStreamListener: procesa cada nuevo tweet, enviando a la cola de salida la información.
 	
-(LogoUZ no se muestra adecuadamente)
+II. WebSocketConfig: Configuración servidor mensajería para usar STOMP sobre Websockets. Se crea el endpoint (donde tenemos nuestro cliente SOCKJS) y los prefijos a usar por las diferentes partes de la app.
+
+III. Implementación envío/recepción de mensajes: 
+	Index.html -> functions.js: Necesario conectar con sistemas mensajería (connect) y suscribirse a un canal cuando tenemos el evento de búsqueda de la interfaz (send y suscribe).
+Send -> Envio mensaje al interfaz Search de la app
+Suscribe -> Esperar resultados (tweets) para incluirlos en la interfaz mediante plantilla de Moustache.
+
+
+PROBLEMA: Los mensajes están llegando correctamente al receptor, pero la plantilla de Mustache no está funcionando adecuadamente y no se muestran los tweets.
